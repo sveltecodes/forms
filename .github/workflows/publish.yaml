@@ -28,8 +28,7 @@ jobs:
         run: npm run build
       - name: Write out .npmrc
         run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}" > ~/.npmrc
-      - run: cat ~/.npmrc | base64
-      - run: npm publish
+      - run: npm publish --access=public
       - uses: sarisia/actions-status-discord@v1
         if: always()
         with:
