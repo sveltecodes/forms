@@ -18,7 +18,7 @@
 	};
 </script>
 
-<input
+<textarea
 	{...$$props}
 	on:change={setValue}
 	name={control?.name}

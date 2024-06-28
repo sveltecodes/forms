@@ -14,7 +14,7 @@ export class Form {
   /**
    * The form controls.
    */
-  public controls: FormControl[] = [];
+  public controls: FormControl<any>[] = [];
 
   /**
    * The form's validity.
@@ -41,7 +41,7 @@ export class Form {
    * Adds a control to the form.
    * @param {FormControl} control The control to add.
    */
-  public addControl(control: FormControl): void {
+  public addControl(control: FormControl<any>): void {
     this.controls.push(new FormControl(control));
   }
 
@@ -51,7 +51,7 @@ export class Form {
    * @throws {Error} Thrown if the control is not found by name.
    * @returns {FormControl} The control.
    */
-  public getControl(name: string): FormControl {
+  public getControl<T>(name: string): FormControl<T> {
     const control = this.controls.find(control => control.name === name);
     if (!control) {
       throw new Error(`Control with name ${name} not found`);

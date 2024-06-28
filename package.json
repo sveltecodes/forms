@@ -1,18 +1,16 @@
 {
-	"name": "@svelte.codes/form-manager",
+	"name": "@svelte.codes/forms",
 	"svelte": "./dist/index.js",
-	"version": "0.7.0",
+	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
 		"build": "svelte-kit sync && svelte-package",
 		"build:css": "postcss --dir ./public/styles/ --config ./postcss.config.cjs ./src/app.pcss --ext .css --verbose -w",
-		"build:w": "nodemon --watch src/**/* --exec \"npm run build\"",
-		"build:watch": "run-p build:w build:css",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
-		"release": "svelte-package && npm version patch && cp package-release.json dist/package.json && cd dist && npm version patch && npm publish"
+		"release": "npm run check && svelte-package && npm version patch && cp package-release.json dist/package.json && cd dist && npm version patch && npm publish"
 	},
 	"devDependencies": {
 		"@sveltejs/kit": "^2.0.6",
@@ -25,7 +23,7 @@
 		"postcss-cli": "^11.0.0",
 		"postcss-load-config": "^5.0.2",
 		"rollup": "^4.9.1",
-		"svelte": "^5.0.0-next.166",
+		"svelte": "^4.2.8",
 		"svelte-check": "^3.6.2",
 		"tailwindcss": "^3.3.6",
 		"tslib": "^2.6.2",
