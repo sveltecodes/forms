@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"build": "svelte-kit sync && svelte-package",
+		"build": "svelte-package",
 		"build:css": "postcss --dir ./public/styles/ --config ./postcss.config.cjs ./src/app.pcss --ext .css --verbose -w",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
