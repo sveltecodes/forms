@@ -10,7 +10,7 @@
 		"package": "svelte-kit package",
 		"preview": "vite preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
-		"release": "npm run check && svelte-package && npm version patch && cp package-release.json dist/package.json && cd dist && npm version patch && npm publish"
+		"release": "npm run check && svelte-package && npm version patch && cp package.json dist/package.json && cd dist && npm version patch && npm publish"
 	},
 	"devDependencies": {
 		"@sveltejs/kit": "^2.0.6",
