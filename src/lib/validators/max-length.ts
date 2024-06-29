@@ -11,7 +11,7 @@ export const maxLength = (length: number): Validator<string> => {
 		fn: (value: Observable<string>): Observable<ValidationResult> => {
 			return value.pipe(
 				map((val: string) => {
-					if (!val || val.length > length) {
+					if (val && val.length > length) {
 						return {
 							valid: false,
 							messages: [`must be no more than ${length} characters`]
