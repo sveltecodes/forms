@@ -1,4 +1,4 @@
-import { Observable, ReplaySubject, combineLatest, distinctUntilChanged, from, map, switchMap } from "rxjs";
+import { BehaviorSubject, Observable, ReplaySubject, combineLatest, distinctUntilChanged, from, map, switchMap } from "rxjs";
 import type { ValidationResult, Validator } from "./validators/validator";
 
 export class FormControl<T> {
@@ -6,7 +6,7 @@ export class FormControl<T> {
   public placeholder?: string;
   public validators?: Validator<any>[];
   public value?: ReplaySubject<any> = new ReplaySubject(1);
-  public errors?: ReplaySubject<ValidationResult[]> = new ReplaySubject(1);
+  public errors?: BehaviorSubject<ValidationResult[]> = new BehaviorSubject([]);
   public data?: T;
 
   public constructor(obj: FormControl<T>) {
