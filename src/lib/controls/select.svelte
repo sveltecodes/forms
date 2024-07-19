@@ -7,10 +7,7 @@
 	export let control: FormControl<any>;
 	export let selected: any;
 
-	const setValue = (e: Selected<any>) => {
-		console.log(e);
-		control.value.next(e.value);
-	};
+	const setValue = (e: Selected<any>) => control.value.next(e.value);
 </script>
 
 <!-- <Select.Root loop bind:selected={bindedValue}> -->

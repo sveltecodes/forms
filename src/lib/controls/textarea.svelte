@@ -3,7 +3,6 @@
 	import { twMerge } from "tailwind-merge";
 	import type { FormControl } from "../form-control";
 	import { theme } from "../themes";
-	import Errors from "./errors.svelte";
 
 	export let control: FormControl<string | number>;
 
@@ -30,5 +29,3 @@
 		"h-9 rounded-md border-2 bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-foreground file:text-sm file:font-medium focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50",
 		$$props.class
 	)} />
-
-<Errors errors={control.errors} />

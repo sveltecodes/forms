@@ -1,6 +1,7 @@
-import { combineLatest, map, type Observable } from "rxjs";
+import { BehaviorSubject, combineLatest, map, type Observable } from "rxjs";
 import type { FormConfig } from "./form-config";
 import { FormControl } from "./form-control";
+import { deepEqual } from "./util";
 
 /**
  * Represents a form instance.
@@ -22,6 +23,16 @@ export class Form {
   public valid: Observable<boolean>;
 
   /**
+   * Whether or not the form values have not changed (default true).
+   */
+  public pristine: Observable<boolean>;
+
+  /**
+   * Keeps track of changed fields and their values.
+   */
+  public changed: BehaviorSubject<Record<string, any>> = new BehaviorSubject({});
+
+  /**
    * Creates a new form instance.
    * @param {FormConfig} config The form configuration.
    */
@@ -35,6 +46,8 @@ export class Form {
     this.valid = combineLatest(this.controls.map(control => control.errors)).pipe(
       map(errorsArray => errorsArray.every(errors => errors === null || errors.length === 0))
     );
+
+    this.setupChangedTracking();
   }
 
   /**
@@ -42,7 +55,26 @@ export class Form {
    * @param {FormControl} control The control to add.
    */
   public addControl(control: FormControl<any>): void {
-    this.controls.push(new FormControl(control));
+    this.controls.push(control);
+    this.setupChangedTracking();
+  }
+
+  /**
+   * Sets up tracking for changes in the form controls.
+   */
+  private setupChangedTracking(): void {
+    combineLatest(this.controls.map(control => control.value.pipe(
+      map(value => ({ name: control.name, value, original: control.original }))
+    ))).subscribe(changes => {
+      const changedValues = changes.reduce((acc, { name, value, original }) => {
+        if (!deepEqual(value, original)) {
+          acc[name] = value;
+        }
+        return acc;
+      }, {});
+
+      this.changed.next(changedValues);
+    });
   }
 
   /**
