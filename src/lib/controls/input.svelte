@@ -44,4 +44,3 @@
 		$$props.class
 	)}
 	{...$$props} />
-{$pristine}
