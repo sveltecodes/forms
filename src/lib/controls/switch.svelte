@@ -9,7 +9,7 @@
 
 <div class="flex justify-between items-center">
 	{#if control?.placeholder}
-		<Label.Root class={twMerge(theme.switch.label.join(" "), "text-sm font-medium")}>
+		<Label.Root class={twMerge(theme.switch.label.join(" "), "text-sm font-medium mr-2")}>
 			{control.placeholder}
 		</Label.Root>
 	{/if}
