@@ -6,10 +6,10 @@ export const theme = {
     "focus:border-lime-600",
   ],
   label: [
-    "text-slate-600 dark:text-slate-500",
+    "text-slate-600 dark:text-slate-400",
   ],
   description: [
-    "text-slate-500 dark:text-slate-600",
+    "text-slate-500 dark:text-slate-500",
   ],
   select: {
     item: [
