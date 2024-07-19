@@ -6,11 +6,11 @@
 	export let description: string = null;
 </script>
 
-<div class="flex flex-col gap-1.5">
-	<div class="flex flex-col gap-0.5">
-		<label class={twMerge(theme.label.join(" "), "px-[1px] font-medium text-sm disabled:opacity-50", $$props.class)}>{label}</label>
+<div class="flex flex-col gap-1">
+	<div class="flex flex-col gap-0.5 px-[1px]">
+		<label class={twMerge(theme.label.join(" "), "font-medium text-sm disabled:opacity-50", $$props.class)}>{label}</label>
 		{#if description}
-			<p class={twMerge(theme.description.join(" "), "px-[1px] text-xs ", $$props.class)}>{description}</p>
+			<p class={twMerge(theme.description.join(" "), "text-xs ", $$props.class)}>{description}</p>
 		{/if}
 	</div>
 	<slot />
