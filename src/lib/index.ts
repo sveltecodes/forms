@@ -1,3 +1,4 @@
+export { default as ControlContainer } from './controls/control-container.svelte';
 export { default as Input } from "./controls/input.svelte";
 export { default as Select } from "./controls/select.svelte";
 export { default as Switch } from "./controls/switch.svelte";

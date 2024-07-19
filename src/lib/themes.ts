@@ -5,6 +5,12 @@ export const theme = {
     "placeholder:text-slate-300 dark:placeholder:text-slate-700",
     "focus:border-lime-600",
   ],
+  label: [
+    "text-slate-600 dark:text-slate-500",
+  ],
+  description: [
+    "text-slate-500 dark:text-slate-600",
+  ],
   select: {
     item: [
       "text-slate-500 dark:text-slate-400",
