@@ -25,7 +25,7 @@
 				<Select.Item
 					value={option.value}
 					disabled={option?.disabled}
-					class={twMerge(theme.select.item.join(" "), "flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50")}>
+					class={twMerge(theme.select.item.join(" "), "h-9 flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-30")}>
 					{option.label}
 				</Select.Item>
 			{/each}

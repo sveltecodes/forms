@@ -55,7 +55,7 @@ export class Form {
    * @param {FormControl} control The control to add.
    */
   public addControl(control: FormControl<any>): void {
-    this.controls.push(control);
+    this.controls.push(new FormControl(control));
     this.setupChangedTracking();
   }
 
