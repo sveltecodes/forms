@@ -65,7 +65,7 @@ export class FormControl<T> {
     );
   }
 
-  public equals(): Observable<boolean> {
+  public equals?(): Observable<boolean> {
     return this.value.pipe(
       map(value => deepEqual(value, this.original))
     );

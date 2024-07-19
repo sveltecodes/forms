@@ -45,6 +45,3 @@
 	)}
 	{...$$props} />
 {$pristine}
-
-<div>errors: {JSON.stringify($errors)}</div>
-<div>original: {JSON.stringify(control.original)}</div>
