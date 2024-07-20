@@ -6,8 +6,7 @@
 	import { theme } from "../themes";
 
 	export let control: FormControl<string | number>;
-
-	let element: HTMLInputElement;
+	export let element: HTMLInputElement;
 
 	const errors = writable();
 
