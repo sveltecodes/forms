@@ -37,7 +37,8 @@
 	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
-			"import": "./dist/index.js"
+			"import": "./dist/index.js",
+			"svelte": "./dist/index.js"
 		},
 		"./styles/app.pcss": "./public/styles/app.pcss"
 	},
